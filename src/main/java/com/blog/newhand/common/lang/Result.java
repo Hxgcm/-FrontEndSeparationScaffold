@@ -15,6 +15,9 @@ public class Result implements Serializable {
      * 非200 表示异常
      */
     private int code;
+    /**
+     * 错误返回消息
+     */
     private String msg;
     private Object data;
 
