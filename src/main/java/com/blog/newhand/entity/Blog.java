@@ -3,6 +3,9 @@ package com.blog.newhand.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.google.errorprone.annotations.FormatString;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
@@ -36,6 +39,7 @@ public class Blog implements Serializable {
     @NotBlank(message = "内容不能为空！")
     private String content;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime created;
 
     private Integer status;

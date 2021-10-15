@@ -3,7 +3,6 @@ package com.blog.newhand.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.sun.istack.internal.NotNull;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

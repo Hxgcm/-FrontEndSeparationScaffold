@@ -2,9 +2,12 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.31.151:3306/db_newhand?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
-    username: reroot
-    password: 971005
+    # 外网访问测试数据地址
+    url: jdbc:mysql://39.106.10.15:3306/newhand_db?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC&autoReconnect=true&failOverReadOnly=false
+    #内网访问测试数据库地址
+    #url: jdbc:mysql://192.168.31.151:3306/db_newhand?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: newhand
+    password: 1RKhGzknMJ
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
 
@@ -20,7 +23,9 @@ newhand:
 shiro-redis:
   enabled: true
   redis-manager:
-    host: 127.0.0.1:6379
+    # 虚拟机Redis
+    host: 192.168.133.7:6379
+    #host: 127.0.0.1:6379
 
 server:
   port: 8081

@@ -36,14 +36,16 @@ public class BlogController {
     @GetMapping("/blogs")
     public Result list(@RequestParam(defaultValue = "1") Integer currentPage) {
 
+
         Page<Blog> page = new Page<>();
+        page.setCurrent(currentPage);
 
         IPage<Blog> pageDate = blogService.page(page, new QueryWrapper<Blog>().orderByDesc("created"));
 
         return Result.success(pageDate);
     }
 
-    @PostMapping("/blog/{id}")
+    @GetMapping("/blog/{id}")
     public Result detail(@PathVariable(name = "id") Long id) {
 
         Blog blog = blogService.getById(id);
